@@ -18,4 +18,12 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=config["CLIENT_ID"],
                                                redirect_uri="http://localhost:8000/callback",
                                                scope=scope))
 
-results = sp.add_to_queue("spotify:track:4qbEaaJ29p32GI8EWQmm6R")
+""" results = sp.current_user_top_artists(limit=10, time_range="long_term")
+print(len(results))
+print(results.keys())
+print(len(results["items"]))
+for i in results["items"]:
+    print(i["name"]) """
+
+print(sp.me())
+sp.pause_playback()
